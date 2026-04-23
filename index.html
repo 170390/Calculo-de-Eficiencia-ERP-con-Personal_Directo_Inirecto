@@ -2,56 +2,129 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Calculadora ERP</title>
+    <title>ERP Ingeniería Completo</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <div class="container">
-        <h1>Calculadora de Eficiencia ERP</h1>
+<div class="container">
+    <h1>Calculadora ERP Completa</h1>
 
-        <!-- SECCIÓN 1 -->
-        <section class="card">
-            <h2>1. Minutos Personal Indirecto</h2>
+    <!-- 1. PORCENTAJE -->
+    <section class="card">
+        <h2>1. % Personal por Línea</h2>
 
-            <label>Personal Indirecto (cantidad):</label>
-            <input type="number" id="indirecto">
+        <label>Total Personal:</label>
+        <input type="number" id="totalPersonal">
 
-            <label>Horas Jornada:</label>
-            <input type="number" id="horasJornada" value="9.6">
+        <label>TO Línea:</label>
+        <input type="number" id="toLinea">
 
-            <label>Horas Leaving Early:</label>
-            <input type="number" id="leaving">
+        <button onclick="calcularPorcentaje()">Calcular</button>
 
-            <label>Personal Directo:</label>
-            <input type="number" id="directo">
+        <p>% Línea: <span id="porcentajeLinea">0%</span></p>
+    </section>
 
-            <label>% Indirecto:</label>
-            <input type="number" id="porcentaje" step="0.01">
+    <!-- 2. INDIRECTO -->
+    <section class="card">
+        <h2>2. Personal Indirecto</h2>
 
-            <button onclick="calcularIndirecto()">Calcular Minutos</button>
+        <label>TO Indirecto:</label>
+        <input type="number" id="toIndirecto">
 
-            <p>Horas Totales: <span id="horasTotales">0</span></p>
-            <p>Minutos Totales: <span id="minutosTotales">0</span></p>
-        </section>
+        <label>Horas:</label>
+        <input type="number" id="horasIndirecto" value="9.6">
 
-        <!-- SECCIÓN 2 -->
-        <section class="card">
-            <h2>2. Eficiencia ERP</h2>
+        <label>Horas Tarde:</label>
+        <input type="number" id="tardeIndirecto">
 
-            <label>Producción:</label>
-            <input type="number" id="produccion">
+        <button onclick="calcularIndirecto()">Calcular</button>
 
-            <label>SMV:</label>
-            <input type="number" id="smv" step="0.01">
+        <p>Horas Indirecto: <span id="resultadoIndirecto">0</span></p>
+    </section>
 
-            <button onclick="calcularERP()">Calcular ERP</button>
+    <!-- 3. DIRECTO COMUN -->
+    <section class="card">
+        <h2>3. Personal Directo Común</h2>
 
-            <h3>Resultado ERP: <span id="erpResultado">0%</span></h3>
-        </section>
+        <label>TO Común:</label>
+        <input type="number" id="toComun">
 
-    </div>
+        <label>Horas:</label>
+        <input type="number" id="horasComun" value="9.6">
 
-    <script src="script.js"></script>
+        <label>Horas Tarde:</label>
+        <input type="number" id="tardeComun">
+
+        <button onclick="calcularComun()">Calcular</button>
+
+        <p>Horas Directo Común: <span id="resultadoComun">0</span></p>
+    </section>
+
+    <!-- 4. HORAS ASIGNADAS -->
+    <section class="card">
+        <h2>4. Horas Asignadas</h2>
+
+        <label>Horas Indirecto:</label>
+        <input type="number" id="horasIndAsignadas">
+
+        <label>Horas Directo Común:</label>
+        <input type="number" id="horasComAsignadas">
+
+        <label>% Línea:</label>
+        <input type="number" id="porcentajeAsignado">
+
+        <button onclick="calcularAsignadas()">Calcular</button>
+
+        <p>Suma Horas: <span id="sumaHoras">0</span></p>
+        <p>Horas Asignadas: <span id="horasAsignadas">0</span></p>
+    </section>
+
+    <!-- 5. HORAS POR LINEA -->
+    <section class="card">
+        <h2>5. Horas por Línea</h2>
+
+        <label>TO Línea:</label>
+        <input type="number" id="toLineaHoras">
+
+        <label>Jornada:</label>
+        <input type="number" id="jornada" value="9.6">
+
+        <label>Horas Tarde Línea:</label>
+        <input type="number" id="tardeLinea">
+
+        <button onclick="calcularHorasLinea()">Calcular</button>
+
+        <p>Horas Línea: <span id="horasLinea">0</span></p>
+    </section>
+
+    <!-- 6. TOTAL + MINUTOS -->
+    <section class="card">
+        <h2>6. Total Horas y Minutos</h2>
+
+        <button onclick="calcularMinutos()">Calcular</button>
+
+        <p>Total Horas: <span id="totalHoras">0</span></p>
+        <p>Total Minutos: <span id="totalMinutos">0</span></p>
+    </section>
+
+    <!-- 7. ERP FINAL -->
+    <section class="card">
+        <h2>7. ERP Final</h2>
+
+        <label>Producción:</label>
+        <input type="number" id="produccion">
+
+        <label>SMV:</label>
+        <input type="number" id="smv" step="0.01">
+
+        <button onclick="calcularERP()">Calcular ERP</button>
+
+        <h3>ERP: <span id="resultadoERP">0%</span></h3>
+    </section>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
