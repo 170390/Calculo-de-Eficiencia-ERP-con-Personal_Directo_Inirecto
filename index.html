@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora ERP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calculadora de Eficiencia ERP</h1>
+
+        <!-- SECCIÓN 1 -->
+        <section class="card">
+            <h2>1. Minutos Personal Indirecto</h2>
+
+            <label>Personal Indirecto (cantidad):</label>
+            <input type="number" id="indirecto">
+
+            <label>Horas Jornada:</label>
+            <input type="number" id="horasJornada" value="9.6">
+
+            <label>Horas Leaving Early:</label>
+            <input type="number" id="leaving">
+
+            <label>Personal Directo:</label>
+            <input type="number" id="directo">
+
+            <label>% Indirecto:</label>
+            <input type="number" id="porcentaje" step="0.01">
+
+            <button onclick="calcularIndirecto()">Calcular Minutos</button>
+
+            <p>Horas Totales: <span id="horasTotales">0</span></p>
+            <p>Minutos Totales: <span id="minutosTotales">0</span></p>
+        </section>
+
+        <!-- SECCIÓN 2 -->
+        <section class="card">
+            <h2>2. Eficiencia ERP</h2>
+
+            <label>Producción:</label>
+            <input type="number" id="produccion">
+
+            <label>SMV:</label>
+            <input type="number" id="smv" step="0.01">
+
+            <button onclick="calcularERP()">Calcular ERP</button>
+
+            <h3>Resultado ERP: <span id="erpResultado">0%</span></h3>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
