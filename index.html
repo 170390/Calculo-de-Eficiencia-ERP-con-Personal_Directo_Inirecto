@@ -110,7 +110,7 @@
 
     <!-- 7. ERP FINAL (ACTUALIZADO) -->
 <!-- 7. ERP FINAL -->
-<section class="card">
+<section class="card full">
     <h2>7. ERP Final</h2>
 
     <div class="tabla-estilos">
@@ -139,9 +139,12 @@
         </div>
     </div>
 
-    <button onclick="calcularTodo()">Calcular ERP + Metas</button>
+    <button class="btn-relieve" onclick="calcularTodo()">Calcular ERP + Metas</button>
 
-    <h3>ERP: <span id="resultadoERP">0%</span></h3>
+    <div class="resultado-box">
+        <h3>ERP: <span id="resultadoERP">0%</span></h3>
+        <div id="semaforo" class="semaforo"></div>
+    </div>
 
     <hr>
 
