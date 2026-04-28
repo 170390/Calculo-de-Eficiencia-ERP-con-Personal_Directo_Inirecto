@@ -98,8 +98,13 @@ function calcularERP() {
 
 function calcularMetas() {
 
+    // Forzar cálculo de minutos si no se ha hecho
     if (minutosGlobal === 0) {
-        alert("Primero calcula los minutos (Paso 6).");
+        calcularMinutos();
+    }
+
+    if (minutosGlobal === 0) {
+        alert("No hay minutos calculados.");
         return;
     }
 
@@ -111,6 +116,7 @@ function calcularMetas() {
     let smv2 = +document.getElementById("smv2").value || 0;
     let smv3 = +document.getElementById("smv3").value || 0;
 
+    // Determinar SMV base (mayor producción)
     let smvBase = 0;
 
     if (prod1 >= prod2 && prod1 >= prod3) {
@@ -122,7 +128,7 @@ function calcularMetas() {
     }
 
     if (smvBase === 0) {
-        alert("El SMV base no puede ser 0.");
+        alert("Debes ingresar producción y SMV válidos.");
         return;
     }
 
@@ -131,7 +137,7 @@ function calcularMetas() {
     let meta90 = (minutosGlobal * 0.90) / smvBase;
 
     document.getElementById("smvBase").innerText = smvBase.toFixed(2);
-    document.getElementById("meta100").innerText = meta100.toFixed(0);
-    document.getElementById("meta95").innerText = meta95.toFixed(0);
-    document.getElementById("meta90").innerText = meta90.toFixed(0);
+    document.getElementById("meta100").innerText = Math.round(meta100);
+    document.getElementById("meta95").innerText = Math.round(meta95);
+    document.getElementById("meta90").innerText = Math.round(meta90);
 }
