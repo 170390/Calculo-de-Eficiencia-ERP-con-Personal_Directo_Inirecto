@@ -85,6 +85,12 @@ function calcularERP() {
         (+document.getElementById("prod2").value || 0) * (+document.getElementById("smv2").value || 0) +
         (+document.getElementById("prod3").value || 0) * (+document.getElementById("smv3").value || 0);
 
+    // VALIDACIÓN CLAVE
+    if (minutosGlobal === 0) {
+        alert("Primero debes calcular los minutos (Paso 6).");
+        return;
+    }
+
     let erp = (totalGeneral / minutosGlobal) * 100;
 
     document.getElementById("resultadoERP").innerText = erp.toFixed(2) + "%";
