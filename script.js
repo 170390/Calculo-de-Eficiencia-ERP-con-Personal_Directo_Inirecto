@@ -164,7 +164,6 @@ function calcularMetas() {
 
 function calcularTodo() {
 
-    // Asegurar minutos
     if (!minutosGlobal || minutosGlobal === 0) {
         calcularMinutos();
     }
@@ -182,15 +181,22 @@ function calcularTodo() {
     let smv2 = +document.getElementById("smv2").value || 0;
     let smv3 = +document.getElementById("smv3").value || 0;
 
-    // ERP TOTAL
-    let totalGeneral =
-        (prod1 * smv1) +
-        (prod2 * smv2) +
-        (prod3 * smv3);
+    let totalGeneral = (prod1 * smv1) + (prod2 * smv2) + (prod3 * smv3);
 
     let erp = (totalGeneral / minutosGlobal) * 100;
 
     document.getElementById("resultadoERP").innerText = erp.toFixed(2) + "%";
+
+    // SEMÁFORO
+    let semaforo = document.getElementById("semaforo");
+
+    if (erp >= 100) {
+        semaforo.style.background = "green";
+    } else if (erp >= 90) {
+        semaforo.style.background = "gold";
+    } else {
+        semaforo.style.background = "red";
+    }
 
     // SMV BASE
     let smvBase = 0;
@@ -199,9 +205,8 @@ function calcularTodo() {
     else if (prod2 >= prod1 && prod2 >= prod3) smvBase = smv2;
     else smvBase = smv3;
 
-    if (!smvBase || smvBase === 0) return;
+    if (!smvBase) return;
 
-    // METAS
     document.getElementById("meta100").innerText = Math.round(minutosGlobal / smvBase);
     document.getElementById("meta95").innerText = Math.round((minutosGlobal * 0.95) / smvBase);
     document.getElementById("meta90").innerText = Math.round((minutosGlobal * 0.90) / smvBase);
