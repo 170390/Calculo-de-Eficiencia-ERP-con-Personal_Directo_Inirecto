@@ -109,31 +109,64 @@
     </section>
 
     <!-- 7. ERP FINAL (ACTUALIZADO) -->
-    <section class="card">
-        <h2>7. ERP Final (Múltiples Estilos)</h2>
+<!-- 7. ERP FINAL -->
+<section class="card">
+    <h2>7. ERP Final (Múltiples Estilos)</h2>
 
-        <h3>Estilo 1</h3>
-        <label>Producción:</label>
-        <input type="number" id="prod1">
-        <label>SMV:</label>
-        <input type="number" id="smv1" step="0.01">
+    <h3>Estilo 1</h3>
+    <label>Producción:</label>
+    <input type="number" id="prod1">
+    <label>SMV:</label>
+    <input type="number" id="smv1" step="0.01">
 
-        <h3>Estilo 2</h3>
-        <label>Producción:</label>
-        <input type="number" id="prod2">
-        <label>SMV:</label>
-        <input type="number" id="smv2" step="0.01">
+    <h3>Estilo 2</h3>
+    <label>Producción:</label>
+    <input type="number" id="prod2">
+    <label>SMV:</label>
+    <input type="number" id="smv2" step="0.01">
 
-        <h3>Estilo 3</h3>
-        <label>Producción:</label>
-        <input type="number" id="prod3">
-        <label>SMV:</label>
-        <input type="number" id="smv3" step="0.01">
+    <h3>Estilo 3</h3>
+    <label>Producción:</label>
+    <input type="number" id="prod3">
+    <label>SMV:</label>
+    <input type="number" id="smv3" step="0.01">
 
-        <button onclick="calcularERP()">Calcular ERP</button>
+    <button onclick="calcularERP()">Calcular ERP</button>
 
-        <h3>ERP: <span id="resultadoERP">0%</span></h3>
-    </section>
+    <h3>ERP: <span id="resultadoERP">0%</span></h3>
+
+    <hr>
+
+    <h3>Producción Objetivo por Eficiencia</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Meta ERP</th>
+                <th>Producción Requerida</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>100%</td>
+                <td id="meta100">0</td>
+            </tr>
+            <tr>
+                <td>95%</td>
+                <td id="meta95">0</td>
+            </tr>
+            <tr>
+                <td>90%</td>
+                <td id="meta90">0</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>SMV Base usado: <span id="smvBase">0</span></p>
+
+    <button onclick="calcularMetas()">Calcular Metas</button>
+
+</section>
 
 </div>
 
