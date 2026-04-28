@@ -228,3 +228,45 @@ tr:nth-child(even) {
         height: 50px;
     }
 }
+
+/* CAMPOS */
+.campo {
+    display: flex;
+    flex-direction: column;
+}
+
+/* OCULTAR LABELS EN PC */
+.campo label {
+    display: none;
+    font-size: 13px;
+    margin-bottom: 3px;
+    color: #555;
+}
+
+/* TITULO ESTILO */
+.titulo-estilo {
+    font-weight: bold;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+
+    .fila {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        background: #f9fbff;
+        padding: 12px;
+        border-radius: 10px;
+    }
+
+    /* MOSTRAR LABELS EN CELULAR */
+    .campo label {
+        display: block;
+    }
+
+    /* OCULTAR ENCABEZADO SOLO EN CELULAR */
+    .encabezado {
+        display: none;
+    }
+}
