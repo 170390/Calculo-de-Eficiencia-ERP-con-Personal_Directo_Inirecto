@@ -15,11 +15,20 @@
     <section class="card">
         <h2>1. % Personal por Línea</h2>
 
-        <label>Total Personal:</label>
-        <input type="number" id="totalPersonal">
+       <div class="tabla-wrapper">
+    <div class="tabla-grid simple">
 
-        <label>TO Línea:</label>
-        <input type="number" id="toLinea">
+        <div class="header">Campo</div>
+        <div class="header">Valor</div>
+
+        <div>Total Personal</div>
+        <div><input type="number" id="totalPersonal"></div>
+
+        <div>TO Línea</div>
+        <div><input type="number" id="toLinea"></div>
+
+    </div>
+</div>
 
         <button onclick="calcularPorcentaje()">Calcular</button>
 
@@ -30,15 +39,23 @@
     <section class="card">
         <h2>2. Personal Indirecto</h2>
 
-        <label>TO Indirecto:</label>
-        <input type="number" id="toIndirecto">
+       <div class="tabla-wrapper">
+    <div class="tabla-grid simple">
 
-        <label>Horas:</label>
-        <input type="number" id="horasIndirecto" value="9.6">
+        <div class="header">Campo</div>
+        <div class="header">Valor</div>
 
-        <label>Horas Tarde:</label>
-        <input type="number" id="tardeIndirecto">
+        <div>TO Indirecto</div>
+        <div><input type="number" id="toIndirecto"></div>
 
+        <div>Horas</div>
+        <div><input type="number" id="horasIndirecto"></div>
+
+        <div>Horas Tarde</div>
+        <div><input type="number" id="tardeIndirecto"></div>
+
+    </div>
+</div>
         <button onclick="calcularIndirecto()">Calcular</button>
 
         <p>Horas Indirecto: <span id="resultadoIndirecto">0</span></p>
@@ -48,14 +65,23 @@
     <section class="card">
         <h2>3. Personal Directo Común</h2>
 
-        <label>TO Común:</label>
-        <input type="number" id="toComun">
+        <<div class="tabla-wrapper">
+    <div class="tabla-grid simple">
 
-        <label>Horas:</label>
-        <input type="number" id="horasComun" value="9.6">
+        <div class="header">Campo</div>
+        <div class="header">Valor</div>
 
-        <label>Horas Tarde:</label>
-        <input type="number" id="tardeComun">
+        <div>TO Común</div>
+        <div><input type="number" id="toComun"></div>
+
+        <div>Horas</div>
+        <div><input type="number" id="horasComun"></div>
+
+        <div>Horas Tarde</div>
+        <div><input type="number" id="tardeComun"></div>
+
+    </div>
+</div>
 
         <button onclick="calcularComun()">Calcular</button>
 
@@ -66,14 +92,23 @@
     <section class="card">
         <h2>4. Horas Asignadas</h2>
 
-        <label>Horas Indirecto:</label>
-        <input type="number" id="horasIndAsignadas">
+       <div class="tabla-wrapper">
+    <div class="tabla-grid simple">
 
-        <label>Horas Directo Común:</label>
-        <input type="number" id="horasComAsignadas">
+        <div class="header">Campo</div>
+        <div class="header">Valor</div>
 
-        <label>% Línea:</label>
-        <input type="number" id="porcentajeAsignado">
+        <div>Horas Indirecto</div>
+        <div><input type="number" id="horasIndAsignadas"></div>
+
+        <div>Horas Directo Común</div>
+        <div><input type="number" id="horasComAsignadas"></div>
+
+        <div>% Línea</div>
+        <div><input type="number" id="porcentajeAsignado"></div>
+
+    </div>
+</div>
 
         <button onclick="calcularAsignadas()">Calcular</button>
 
@@ -85,14 +120,23 @@
     <section class="card">
         <h2>5. Horas por Línea</h2>
 
-        <label>TO Línea:</label>
-        <input type="number" id="toLineaHoras">
+       <div class="tabla-wrapper">
+    <div class="tabla-grid simple">
 
-        <label>Jornada:</label>
-        <input type="number" id="jornada" value="9.6">
+        <div class="header">Campo</div>
+        <div class="header">Valor</div>
 
-        <label>Horas Tarde Línea:</label>
-        <input type="number" id="tardeLinea">
+        <div>TO Línea</div>
+        <div><input type="number" id="toLineaHoras"></div>
+
+        <div>Jornada</div>
+        <div><input type="number" id="jornada"></div>
+
+        <div>Horas Tarde</div>
+        <div><input type="number" id="tardeLinea"></div>
+
+    </div>
+</div>
 
         <button onclick="calcularHorasLinea()">Calcular</button>
 
@@ -102,6 +146,21 @@
     <!-- 6. TOTAL + MINUTOS -->
     <section class="card">
         <h2>6. Total Horas y Minutos</h2>
+
+        <div class="tabla-wrapper">
+    <div class="tabla-grid simple">
+
+        <div class="header">Resultado</div>
+        <div class="header">Valor</div>
+
+        <div>Total Horas</div>
+        <div><span id="totalHoras">0</span></div>
+
+        <div>Total Minutos</div>
+        <div><span id="totalMinutos">0</span></div>
+
+    </div>
+</div>
 
         <button onclick="calcularMinutos()">Calcular</button>
 
