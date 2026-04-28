@@ -67,3 +67,44 @@ th {
 tr:nth-child(even) {
     background: #f2f2f2;
 }
+
+.tabla-estilos {
+    margin-top: 15px;
+}
+
+.fila {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: center;
+}
+
+.encabezado {
+    font-weight: bold;
+    background: #007bff;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+}
+
+.fila input {
+    padding: 6px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background: #007bff;
+    color: white;
+}
