@@ -298,24 +298,6 @@ tr:nth-child(even) {
     border: 1px solid #ccc;
 }
 
-@media (max-width: 768px) {
-
-    .tabla-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .header {
-        display: none;
-    }
-
-    .tabla-grid > div {
-        background: #f9fbff;
-        padding: 10px;
-        border-radius: 8px;
-        margin-bottom: 5px;
-    }
-}
-
 /* CONTENEDOR CON SCROLL */
 .tabla-wrapper {
     width: 100%;
