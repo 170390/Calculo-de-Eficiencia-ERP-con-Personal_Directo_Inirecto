@@ -315,3 +315,36 @@ tr:nth-child(even) {
         margin-bottom: 5px;
     }
 }
+
+/* CONTENEDOR CON SCROLL */
+.tabla-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* TABLA FIJA */
+.tabla-grid {
+    display: grid;
+    grid-template-columns: 80px 150px 120px;
+    gap: 10px;
+    min-width: 350px; /* 🔥 CLAVE */
+    align-items: center;
+}
+
+/* ENCABEZADOS */
+.header {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* INPUTS */
+.tabla-grid input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
