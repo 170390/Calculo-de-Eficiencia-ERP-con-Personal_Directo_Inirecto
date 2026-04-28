@@ -270,3 +270,48 @@ tr:nth-child(even) {
         display: none;
     }
 }
+
+/* GRID TIPO TABLA */
+.tabla-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+/* ENCABEZADOS */
+.header {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* INPUTS */
+.tabla-grid input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+@media (max-width: 768px) {
+
+    .tabla-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .header {
+        display: none;
+    }
+
+    .tabla-grid > div {
+        background: #f9fbff;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 5px;
+    }
+}
