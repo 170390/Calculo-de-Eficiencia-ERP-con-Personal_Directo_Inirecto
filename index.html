@@ -111,39 +111,47 @@
     <!-- 7. ERP FINAL (ACTUALIZADO) -->
 <!-- 7. ERP FINAL -->
 <section class="card">
-    <h2>7. ERP Final (Múltiples Estilos)</h2>
+    <h2>7. ERP Final</h2>
 
-    <h3>Estilo 1</h3>
-    <label>Producción:</label>
-    <input type="number" id="prod1">
-    <label>SMV:</label>
-    <input type="number" id="smv1" step="0.01">
+    <div class="tabla-estilos">
+        <div class="fila encabezado">
+            <span>Estilo</span>
+            <span>Producción</span>
+            <span>SMV</span>
+        </div>
 
-    <h3>Estilo 2</h3>
-    <label>Producción:</label>
-    <input type="number" id="prod2">
-    <label>SMV:</label>
-    <input type="number" id="smv2" step="0.01">
+        <div class="fila">
+            <span>1</span>
+            <input type="number" id="prod1">
+            <input type="number" id="smv1" step="0.01">
+        </div>
 
-    <h3>Estilo 3</h3>
-    <label>Producción:</label>
-    <input type="number" id="prod3">
-    <label>SMV:</label>
-    <input type="number" id="smv3" step="0.01">
+        <div class="fila">
+            <span>2</span>
+            <input type="number" id="prod2">
+            <input type="number" id="smv2" step="0.01">
+        </div>
 
-    <button onclick="calcularERP()">Calcular ERP</button>
+        <div class="fila">
+            <span>3</span>
+            <input type="number" id="prod3">
+            <input type="number" id="smv3" step="0.01">
+        </div>
+    </div>
+
+    <button onclick="calcularTodo()">Calcular ERP + Metas</button>
 
     <h3>ERP: <span id="resultadoERP">0%</span></h3>
 
     <hr>
 
-    <h3>Producción Objetivo por Eficiencia</h3>
+    <h3>Producción Objetivo</h3>
 
     <table>
         <thead>
             <tr>
-                <th>Meta ERP</th>
-                <th>Producción Requerida</th>
+                <th>Meta</th>
+                <th>Producción</th>
             </tr>
         </thead>
         <tbody>
@@ -162,10 +170,7 @@
         </tbody>
     </table>
 
-    <p>SMV Base usado: <span id="smvBase">0</span></p>
-
-    <button onclick="calcularMetas()">Calcular Metas</button>
-
+    <p>SMV Base: <span id="smvBase">0</span></p>
 </section>
 
 </div>
