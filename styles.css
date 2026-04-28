@@ -330,3 +330,47 @@ tr:nth-child(even) {
     border-radius: 6px;
     border: 1px solid #ccc;
 }
+
+/* CONTENEDOR SCROLL (MÓVIL) */
+.tabla-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+/* GRID BASE */
+.tabla-grid {
+    display: grid;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+}
+
+/* TABLA SIMPLE (2 COLUMNAS) */
+.tabla-grid.simple {
+    grid-template-columns: 1fr 2fr;
+    min-width: 300px;
+}
+
+/* TABLA COMPLEJA (3 COLUMNAS) */
+.tabla-grid:not(.simple) {
+    grid-template-columns: 1fr 2fr 2fr;
+    min-width: 350px;
+}
+
+/* ENCABEZADOS */
+.header {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* INPUTS */
+.tabla-grid input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
