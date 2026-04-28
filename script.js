@@ -95,3 +95,43 @@ function calcularERP() {
 
     document.getElementById("resultadoERP").innerText = erp.toFixed(2) + "%";
 }
+
+function calcularMetas() {
+
+    if (minutosGlobal === 0) {
+        alert("Primero calcula los minutos (Paso 6).");
+        return;
+    }
+
+    let prod1 = +document.getElementById("prod1").value || 0;
+    let prod2 = +document.getElementById("prod2").value || 0;
+    let prod3 = +document.getElementById("prod3").value || 0;
+
+    let smv1 = +document.getElementById("smv1").value || 0;
+    let smv2 = +document.getElementById("smv2").value || 0;
+    let smv3 = +document.getElementById("smv3").value || 0;
+
+    let smvBase = 0;
+
+    if (prod1 >= prod2 && prod1 >= prod3) {
+        smvBase = smv1;
+    } else if (prod2 >= prod1 && prod2 >= prod3) {
+        smvBase = smv2;
+    } else {
+        smvBase = smv3;
+    }
+
+    if (smvBase === 0) {
+        alert("El SMV base no puede ser 0.");
+        return;
+    }
+
+    let meta100 = minutosGlobal / smvBase;
+    let meta95 = (minutosGlobal * 0.95) / smvBase;
+    let meta90 = (minutosGlobal * 0.90) / smvBase;
+
+    document.getElementById("smvBase").innerText = smvBase.toFixed(2);
+    document.getElementById("meta100").innerText = meta100.toFixed(0);
+    document.getElementById("meta95").innerText = meta95.toFixed(0);
+    document.getElementById("meta90").innerText = meta90.toFixed(0);
+}
