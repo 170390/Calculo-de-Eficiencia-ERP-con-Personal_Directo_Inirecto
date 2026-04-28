@@ -115,3 +115,34 @@ tr:nth-child(even) {
         width: 90%;
     }
 }
+
+.tabla-estilos {
+    margin-top: 15px;
+}
+
+/* FILAS TIPO TABLA */
+.fila {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+/* ENCABEZADO */
+.encabezado {
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* INPUTS DENTRO DE TABLA */
+.fila input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
