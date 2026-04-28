@@ -98,25 +98,37 @@ function calcularERP() {
 
 function calcularMetas() {
 
-    // Forzar cálculo de minutos si no se ha hecho
-    if (minutosGlobal === 0) {
+    // Asegurar que minutos exista
+    if (!minutosGlobal || minutosGlobal === 0) {
         calcularMinutos();
     }
 
-    if (minutosGlobal === 0) {
-        alert("No hay minutos calculados.");
+    if (!minutosGlobal || minutosGlobal === 0) {
+        alert("Error: primero debes calcular los minutos (Paso 6).");
         return;
     }
 
-    let prod1 = +document.getElementById("prod1").value || 0;
-    let prod2 = +document.getElementById("prod2").value || 0;
-    let prod3 = +document.getElementById("prod3").value || 0;
+    // Obtener valores
+    let prod1 = Number(document.getElementById("prod1").value) || 0;
+    let prod2 = Number(document.getElementById("prod2").value) || 0;
+    let prod3 = Number(document.getElementById("prod3").value) || 0;
 
-    let smv1 = +document.getElementById("smv1").value || 0;
-    let smv2 = +document.getElementById("smv2").value || 0;
-    let smv3 = +document.getElementById("smv3").value || 0;
+    let smv1 = Number(document.getElementById("smv1").value) || 0;
+    let smv2 = Number(document.getElementById("smv2").value) || 0;
+    let smv3 = Number(document.getElementById("smv3").value) || 0;
 
-    // Determinar SMV base (mayor producción)
+    // Validación básica
+    if (prod1 === 0 && prod2 === 0 && prod3 === 0) {
+        alert("Ingresa al menos una producción.");
+        return;
+    }
+
+    if (smv1 === 0 && smv2 === 0 && smv3 === 0) {
+        alert("Ingresa al menos un SMV.");
+        return;
+    }
+
+    // Determinar estilo con mayor producción
     let smvBase = 0;
 
     if (prod1 >= prod2 && prod1 >= prod3) {
@@ -127,17 +139,25 @@ function calcularMetas() {
         smvBase = smv3;
     }
 
-    if (smvBase === 0) {
-        alert("Debes ingresar producción y SMV válidos.");
+    // Validación final
+    if (!smvBase || smvBase === 0) {
+        alert("El SMV base es inválido.");
         return;
     }
 
+    // Cálculo de metas
     let meta100 = minutosGlobal / smvBase;
     let meta95 = (minutosGlobal * 0.95) / smvBase;
     let meta90 = (minutosGlobal * 0.90) / smvBase;
 
+    // Mostrar resultados
     document.getElementById("smvBase").innerText = smvBase.toFixed(2);
     document.getElementById("meta100").innerText = Math.round(meta100);
     document.getElementById("meta95").innerText = Math.round(meta95);
     document.getElementById("meta90").innerText = Math.round(meta90);
+
+    // DEBUG (muy útil)
+    console.log("Minutos:", minutosGlobal);
+    console.log("SMV Base:", smvBase);
+    console.log("Meta100:", meta100);
 }
