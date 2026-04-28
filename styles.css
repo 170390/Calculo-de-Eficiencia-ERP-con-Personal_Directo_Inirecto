@@ -110,23 +110,40 @@ tr:nth-child(even) {
 }
 
 /* RESPONSIVE (IMPORTANTE PARA CELULAR) */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
+
     .container {
-        width: 90%;
+        width: 95%;
     }
-}
 
-.tabla-estilos {
-    margin-top: 15px;
-}
+    /* 🔥 FORZAR UNA SOLA COLUMNA */
+    .fila {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        background: #f9fbff;
+        padding: 12px;
+        border-radius: 10px;
+        margin-bottom: 12px;
+    }
 
-/* FILAS TIPO TABLA */
-.fila {
-    display: grid;
-    grid-template-columns: 1fr 2fr 2fr;
-    gap: 10px;
-    align-items: center;
-    margin-bottom: 10px;
+    /* Ocultar encabezado */
+    .encabezado {
+        display: none;
+    }
+
+    /* Estilo número (Estilo 1, 2, 3) */
+    .fila > div:first-child {
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    /* Inputs más cómodos */
+    .fila input {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+    }
 }
 
 /* ENCABEZADO */
