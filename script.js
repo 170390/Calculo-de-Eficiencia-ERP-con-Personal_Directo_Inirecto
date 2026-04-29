@@ -221,16 +221,49 @@ function activarAutoCalculo() {
     inputs.forEach(input => {
         input.addEventListener("input", () => {
 
-            calcularPorcentaje();
-            calcularIndirecto();
-            calcularComun();
-            calcularAsignadas();
-            calcularHorasLinea();
-            calcularMinutos();
+            // Punto 1
+            if (valido("totalPersonal", "toLinea")) {
+                calcularPorcentaje();
+            }
+
+            // Punto 2
+            if (valido("toIndirecto", "horasIndirecto")) {
+                calcularIndirecto();
+            }
+
+            // Punto 3
+            if (valido("toComun", "horasComun")) {
+                calcularComun();
+            }
+
+            // Punto 4
+            if (valido("horasIndAsignadas", "horasComAsignadas", "porcentajeAsignado")) {
+                calcularAsignadas();
+            }
+
+            // Punto 5
+            if (valido("toLineaHoras", "jornada")) {
+                calcularHorasLinea();
+            }
+
+            // Punto 6
+            if (
+                document.getElementById("horasAsignadas").innerText !== "0" &&
+                document.getElementById("horasLinea").innerText !== "0"
+            ) {
+                calcularMinutos();
+            }
 
         });
     });
 }
 
-// ACTIVAR CUANDO CARGA LA PAGINA
+// VALIDAR CAMPOS
+function valido(...ids) {
+    return ids.every(id => {
+        let val = document.getElementById(id).value;
+        return val !== "" && !isNaN(val);
+    });
+}
+
 document.addEventListener("DOMContentLoaded", activarAutoCalculo);
