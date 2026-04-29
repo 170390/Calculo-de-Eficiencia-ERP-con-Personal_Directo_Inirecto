@@ -212,3 +212,25 @@ function calcularTodo() {
     document.getElementById("meta90").innerText = Math.round((minutosGlobal * 0.90) / smvBase);
     document.getElementById("smvBase").innerText = smvBase.toFixed(2);
 }
+
+// ===== AUTO CALCULO =====
+function activarAutoCalculo() {
+
+    const inputs = document.querySelectorAll("input");
+
+    inputs.forEach(input => {
+        input.addEventListener("input", () => {
+
+            calcularPorcentaje();
+            calcularIndirecto();
+            calcularComun();
+            calcularAsignadas();
+            calcularHorasLinea();
+            calcularMinutos();
+
+        });
+    });
+}
+
+// ACTIVAR CUANDO CARGA LA PAGINA
+document.addEventListener("DOMContentLoaded", activarAutoCalculo);
