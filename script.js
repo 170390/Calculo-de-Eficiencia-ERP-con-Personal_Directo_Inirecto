@@ -267,3 +267,18 @@ function valido(...ids) {
 }
 
 document.addEventListener("DOMContentLoaded", activarAutoCalculo);
+
+function cambiarModo() {
+
+    let modo = document.getElementById("modoCalculo").value;
+
+    let puntos = ["punto1", "punto2", "punto3", "punto4"];
+
+    puntos.forEach(id => {
+        let el = document.getElementById(id);
+        el.style.display = (modo === "directo") ? "none" : "block";
+    });
+
+}
+
+document.addEventListener("DOMContentLoaded", cambiarModo);
