@@ -36,10 +36,18 @@
 
     </div>
 </div>
+        
+        <div class="tabla-wrapper">
+    <div class="tabla-grid simple">
 
-        <button onclick="calcularPorcentaje()">Calcular</button>
+        <div class="header">Resultado</div>
+        <div class="header">Valor</div>
 
-        <p>% Línea: <span id="porcentajeLinea">0%</span></p>
+        <div>% Línea</div>
+        <div><span class="resultado" id="porcentajeLinea">0%</span></div>
+
+    </div>
+</div>
     </section>
 
     <!-- 2. INDIRECTO -->
@@ -63,9 +71,9 @@
 
     </div>
 </div>
-        <button onclick="calcularIndirecto()">Calcular</button>
-
-        <p>Horas Indirecto: <span id="resultadoIndirecto">0</span></p>
+        
+       <div>Horas Indirecto</div>
+<div><span class="resultado" id="resultadoIndirecto">0</span></div>
     </section>
 
     <!-- 3. DIRECTO COMUN -->
@@ -90,9 +98,8 @@
     </div>
 </div>
 
-        <button onclick="calcularComun()">Calcular</button>
-
-        <p>Horas Directo Común: <span id="resultadoComun">0</span></p>
+        <div>Horas Directo Común</div>
+<div><span class="resultado" id="resultadoComun">0</span></div>
     </section>
 
     <!-- 4. HORAS ASIGNADAS -->
@@ -117,10 +124,11 @@
     </div>
 </div>
 
-        <button onclick="calcularAsignadas()">Calcular</button>
+       <div>Suma</div>
+<div><span class="resultado" id="sumaHoras">0</span></div>
 
-        <p>Suma Horas: <span id="sumaHoras">0</span></p>
-        <p>Horas Asignadas: <span id="horasAsignadas">0</span></p>
+<div>Asignadas</div>
+<div><span class="resultado" id="horasAsignadas">0</span></div>
     </section>
 
     <!-- 5. HORAS POR LINEA -->
@@ -145,9 +153,8 @@
     </div>
 </div>
 
-        <button onclick="calcularHorasLinea()">Calcular</button>
-
-        <p>Horas Línea: <span id="horasLinea">0</span></p>
+       <div>Horas Línea</div>
+<div><span class="resultado" id="horasLinea">0</span></div>
     </section>
 
     <!-- 6. TOTAL + MINUTOS -->
