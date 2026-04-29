@@ -394,9 +394,3 @@ tr:nth-child(even) {
 .resultado:empty {
     background: #f1f1f1;
 }
-
-/* ENCABEZADOS RESULTADO EN VERDE */
-.header {
-    background: linear-gradient(145deg, #28a745, #1e7e34) !important;
-    color: white;
-}
