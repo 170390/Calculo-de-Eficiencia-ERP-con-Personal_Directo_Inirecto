@@ -282,3 +282,46 @@ function cambiarModo() {
 }
 
 document.addEventListener("DOMContentLoaded", cambiarModo);
+
+function limpiarTodo() {
+
+    // LIMPIAR INPUTS
+    document.querySelectorAll("input").forEach(input => {
+        input.value = "";
+    });
+
+    // RESTAURAR VALORES POR DEFECTO
+    document.getElementById("horasIndirecto").value = 9.6;
+    document.getElementById("horasComun").value = 9.6;
+    document.getElementById("jornada").value = 9.6;
+
+    // LIMPIAR RESULTADOS
+    document.getElementById("porcentajeLinea").innerText = "0%";
+    document.getElementById("resultadoIndirecto").innerText = "0";
+    document.getElementById("resultadoComun").innerText = "0";
+    document.getElementById("sumaHoras").innerText = "0";
+    document.getElementById("horasAsignadas").innerText = "0";
+    document.getElementById("horasLinea").innerText = "0";
+    document.getElementById("totalHoras").innerText = "0";
+    document.getElementById("totalMinutos").innerText = "0";
+    document.getElementById("resultadoERP").innerText = "0%";
+
+    // LIMPIAR METAS
+    document.getElementById("meta100").innerText = "0";
+    document.getElementById("meta95").innerText = "0";
+    document.getElementById("meta90").innerText = "0";
+    document.getElementById("smvBase").innerText = "0";
+
+    // REINICIAR SEMÁFORO
+    document.getElementById("semaforo").style.background = "gray";
+
+    // RESET VARIABLE GLOBAL
+    minutosGlobal = 0;
+}
+
+function limpiarTodo() {
+
+    if (!confirm("¿Deseas limpiar todos los datos?")) return;
+
+    // (resto igual)
+}
