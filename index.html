@@ -211,7 +211,7 @@
 
     </div>
 </div>
-   
+             <button onclick="calcularMinutos()">Calcular</button>
     </section>
 
     <!-- 7. ERP FINAL (ACTUALIZADO) -->
@@ -243,17 +243,10 @@
 
     <button class="btn-relieve" onclick="calcularTodo()">Calcular ERP + Metas</button>
 
-<div class="tabla-wrapper">
-    <div class="tabla-grid simple">
-
-        <div class="header">Resultado</div>
-        <div class="header">Valor</div>
-
-        <div>ERP</div>
-        <div><span class="resultado" id="resultadoERP">0%</span></div>
-
+    <div class="resultado-box">
+        <h3>ERP: <span id="resultadoERP">0%</span></h3>
+        <div id="semaforo" class="semaforo"></div>
     </div>
-</div>
 
     <hr>
 
