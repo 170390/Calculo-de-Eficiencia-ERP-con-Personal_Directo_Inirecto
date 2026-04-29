@@ -284,8 +284,6 @@ function cambiarModo() {
 document.addEventListener("DOMContentLoaded", cambiarModo);
 
 function limpiarTodo() {
-    console.log("limpiar funcionando");
-function limpiarTodo() {
 
     // LIMPIAR INPUTS
     document.querySelectorAll("input").forEach(input => {
