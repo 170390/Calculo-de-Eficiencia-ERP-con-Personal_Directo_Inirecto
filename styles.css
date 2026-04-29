@@ -374,3 +374,15 @@ tr:nth-child(even) {
     border-radius: 6px;
     border: 1px solid #ccc;
 }
+
+/* RESULTADOS DESTACADOS */
+.resultado {
+    display: block;
+    background: #e8f2ff;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+    color: #0b5ed7;
+    border: 1px solid #b6d4fe;
+}
