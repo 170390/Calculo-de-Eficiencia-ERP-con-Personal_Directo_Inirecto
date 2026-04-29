@@ -386,3 +386,11 @@ tr:nth-child(even) {
     color: #0b5ed7;
     border: 1px solid #b6d4fe;
 }
+
+.resultado {
+    transition: all 0.2s ease;
+}
+
+.resultado:empty {
+    background: #f1f1f1;
+}
