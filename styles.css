@@ -394,3 +394,16 @@ tr:nth-child(even) {
 .resultado:empty {
     background: #f1f1f1;
 }
+
+input {
+    background-color: #fdecea;
+    border: 1px solid #f5c2c7;
+    transition: all 0.2s ease;
+}
+
+input:focus {
+    background-color: #fff;
+    border-color: #dc3545;
+    box-shadow: 0 0 5px rgba(220,53,69,0.3);
+    outline: none;
+}
