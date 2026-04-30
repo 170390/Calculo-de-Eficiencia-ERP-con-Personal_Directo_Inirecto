@@ -476,3 +476,20 @@ label[for="modoCalculo"] {
     display: block;
     margin-bottom: 6px;
 }
+
+/* FORZAR ESTILO EN TODOS LOS DISPOSITIVOS */
+select#modoCalculo {
+    width: 100%;
+    padding: 14px;
+    font-size: 18px !important;
+    font-weight: bold !important;
+    border-radius: 10px;
+    border: none !important;
+    outline: none;
+
+    background: linear-gradient(145deg, #004aad, #002f6c) !important;
+    color: white !important;
+
+    box-shadow: 0 6px 0 #001f4d, 0 8px 15px rgba(0,0,0,0.2);
+    transition: all 0.2s ease;
+}
