@@ -413,3 +413,16 @@ input:not(:placeholder-shown) {
     background-color: #e9f7ef;
     border: 1px solid #28a745;
 }
+
+// COLOR AUTOMÁTICO INPUTS
+document.querySelectorAll("input").forEach(input => {
+    input.addEventListener("input", function () {
+        if (this.value.trim() !== "") {
+            this.style.backgroundColor = "#e9f7ef";
+            this.style.borderColor = "#28a745";
+        } else {
+            this.style.backgroundColor = "#fdecea";
+            this.style.borderColor = "#f5c2c7";
+        }
+    });
+});
