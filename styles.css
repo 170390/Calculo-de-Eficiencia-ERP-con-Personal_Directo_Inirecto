@@ -437,3 +437,42 @@ input:focus {
 .btn-limpiar:active {
     box-shadow: 0 3px 0 #c69500;
 }
+
+/* SELECTOR DE MODO PRO */
+#modoCalculo {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+
+    /* AZUL INTENSO */
+    background: linear-gradient(145deg, #004aad, #002f6c);
+    color: white;
+
+    /* SOMBRA */
+    box-shadow: 0 6px 0 #001f4d, 0 8px 15px rgba(0,0,0,0.2);
+
+    /* EFECTO SUAVE */
+    transition: all 0.2s ease;
+}
+
+/* EFECTO CLICK */
+#modoCalculo:active {
+    transform: translateY(3px);
+    box-shadow: 0 3px 0 #001f4d;
+}
+
+/* EFECTO HOVER (PC) */
+#modoCalculo:hover {
+    background: linear-gradient(145deg, #005ce6, #003399);
+}
+
+label[for="modoCalculo"] {
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 6px;
+}
