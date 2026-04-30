@@ -375,11 +375,9 @@ resultados.forEach(id => {
     if (el) el.textContent = "0";
 });
 
-// LIMPIAR SMV BASE
-let smv = document.getElementById("smvBase");
-if (smv) smv.textContent = "0";
-   }
-});
+    // LIMPIAR SMV BASE
+    let smv = document.getElementById("smvBase");
+    if (smv) smv.textContent = "0";
 
     // SEMÁFORO
     let sem = document.getElementById("semaforo");
