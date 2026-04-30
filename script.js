@@ -297,28 +297,29 @@ function cambiarModo() {
 
 }
 
-document.querySelectorAll("input").forEach(input => {
+document.addEventListener("DOMContentLoaded", function () {
 
-    // ESTADO INICIAL
-    if (input.value.trim() !== "") {
-        input.style.backgroundColor = "#e9f7ef"; // verde claro
-        input.style.borderColor = "#28a745";
-    }
+    document.querySelectorAll("input").forEach(input => {
 
-    // MIENTRAS ESCRIBE
-    input.addEventListener("focus", function () {
-        this.style.backgroundColor = "#fff";
-    });
-
-    // CUANDO TERMINA
-    input.addEventListener("blur", function () {
-        if (this.value.trim() !== "") {
-            this.style.backgroundColor = "#e9f7ef"; // verde claro
-            this.style.borderColor = "#28a745";
-        } else {
-            this.style.backgroundColor = "#fdecea"; // rojo
-            this.style.borderColor = "#f5c2c7";
+        if (input.value.trim() !== "") {
+            input.style.setProperty("background-color", "#e9f7ef", "important");
+            input.style.setProperty("border-color", "#28a745", "important");
         }
+
+        input.addEventListener("focus", function () {
+            this.style.setProperty("background-color", "#fff", "important");
+        });
+
+        input.addEventListener("blur", function () {
+            if (this.value.trim() !== "") {
+                this.style.setProperty("background-color", "#e9f7ef", "important");
+                this.style.setProperty("border-color", "#28a745", "important");
+            } else {
+                this.style.setProperty("background-color", "#fdecea", "important");
+                this.style.setProperty("border-color", "#f5c2c7", "important");
+            }
+        });
+
     });
 
 });
