@@ -407,3 +407,9 @@ input:focus {
     box-shadow: 0 0 5px rgba(220,53,69,0.3);
     outline: none;
 }
+
+/* INPUT CON DATOS → VERDE */
+input:not(:placeholder-shown) {
+    background-color: #e9f7ef;
+    border: 1px solid #28a745;
+}
