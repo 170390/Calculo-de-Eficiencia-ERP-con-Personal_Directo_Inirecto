@@ -367,6 +367,12 @@ function limpiarTodo() {
     // VARIABLE GLOBAL
     if (typeof minutosGlobal !== "undefined") {
         minutosGlobal = 0;
-    }
+           }
+    });
 
+    // 🔹 LIMPIAR METAS (producción objetivo)
+if (document.getElementById("meta100")) document.getElementById("meta100").innerText = "0";
+if (document.getElementById("meta95")) document.getElementById("meta95").innerText = "0";
+if (document.getElementById("meta90")) document.getElementById("meta90").innerText = "0";
+if (document.getElementById("smvBase")) document.getElementById("smvBase").innerText = "0";
 }
