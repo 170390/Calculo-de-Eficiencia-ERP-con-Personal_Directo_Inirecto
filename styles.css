@@ -408,12 +408,6 @@ input:focus {
     outline: none;
 }
 
-/* INPUT CON DATOS → VERDE */
-input:not(:placeholder-shown) {
-    background-color: #e9f7ef;
-    border: 1px solid #28a745;
-}
-
 // COLOR AUTOMÁTICO INPUTS
 document.querySelectorAll("input").forEach(input => {
     input.addEventListener("input", function () {
