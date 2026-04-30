@@ -368,7 +368,7 @@ function limpiarTodo() {
     if (typeof minutosGlobal !== "undefined") {
         minutosGlobal = 0;
            }
-    });
+}
 
     // 🔹 LIMPIAR METAS (producción objetivo)
 if (document.getElementById("meta100")) document.getElementById("meta100").innerText = "0";
