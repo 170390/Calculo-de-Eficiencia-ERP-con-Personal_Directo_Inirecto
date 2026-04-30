@@ -349,16 +349,31 @@ function limpiarTodo() {
         }
     });
 
-    // LIMPIAR RESULTADOS (SIN ROMPER)
-    document.querySelectorAll("span").forEach(span => {
-        if (span.id) {
-            if (span.id.includes("porcentaje") || span.id.includes("ERP")) {
-                span.innerText = "0%";
-            } else {
-                span.innerText = "0";
-            }
-        }
-    });
+   // LIMPIAR RESULTADOS (CONTROLADO)
+let resultados = [
+    "porcentajeLinea",
+    "resultadoIndirecto",
+    "resultadoComun",
+    "sumaHoras",
+    "horasAsignadas",
+    "horasLinea",
+    "totalHoras",
+    "totalMinutos",
+    "resultadoERP"
+];
+
+resultados.forEach(id => {
+    let el = document.getElementById(id);
+    if (el) {
+        el.innerText = (id === "porcentajeLinea" || id === "resultadoERP") ? "0%" : "0";
+    }
+});
+
+// LIMPIAR METAS (producción objetivo)
+if (document.getElementById("meta100")) document.getElementById("meta100").innerText = "0";
+if (document.getElementById("meta95")) document.getElementById("meta95").innerText = "0";
+if (document.getElementById("meta90")) document.getElementById("meta90").innerText = "0";
+if (document.getElementById("smvBase")) document.getElementById("smvBase").innerText = "0";
 
     // SEMÁFORO
     let sem = document.getElementById("semaforo");
