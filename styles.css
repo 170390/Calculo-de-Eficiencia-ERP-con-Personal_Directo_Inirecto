@@ -416,3 +416,24 @@ input:focus {
 .botones button {
     width: 100%;
 }
+
+.botones {
+    display: flex;
+    gap: 15px; /* 🔥 separación */
+    margin-top: 15px;
+}
+
+.botones button {
+    flex: 1; /* ambos del mismo tamaño */
+}
+
+/* BOTÓN LIMPIAR (ADVERTENCIA) */
+.btn-limpiar {
+    background: linear-gradient(145deg, #ffc107, #e0a800);
+    color: #333;
+    box-shadow: 0 6px 0 #c69500, 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.btn-limpiar:active {
+    box-shadow: 0 3px 0 #c69500;
+}
