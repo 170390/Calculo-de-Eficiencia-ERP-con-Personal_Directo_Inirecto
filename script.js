@@ -94,6 +94,9 @@ function calcularERP() {
     let erp = (totalGeneral / minutosGlobal) * 100;
 
     document.getElementById("resultadoERP").innerText = erp.toFixed(2) + "%";
+
+// 👇 AGREGA ESTA LÍNEA
+calcularMetas();
 }
 
 function calcularMetas() {
