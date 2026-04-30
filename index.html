@@ -242,8 +242,10 @@
     </div>
 </div>
 
-    <button class="btn-relieve" onclick="calcularTodo()">Calcular ERP + Metas</button>
-
+  <div class="botones">
+    <button onclick="calcularERP()">Calcular ERP + Metas</button>
+    <button type="button" onclick="limpiarTodo()">Limpiar</button>
+</div>
     <div class="resultado-box">
         <h3>ERP: <span id="resultadoERP">0%</span></h3>
         <div id="semaforo" class="semaforo"></div>
