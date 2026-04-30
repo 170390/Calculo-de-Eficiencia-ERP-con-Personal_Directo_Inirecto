@@ -388,4 +388,4 @@ function limpiarTodo() {
         minutosGlobal = 0;
     }
 
-}
+}}
