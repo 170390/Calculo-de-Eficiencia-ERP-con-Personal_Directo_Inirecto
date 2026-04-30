@@ -385,3 +385,5 @@ if (sem) sem.style.background = "gray";
 if (typeof minutosGlobal !== "undefined") {
     minutosGlobal = 0;
 }
+
+}
