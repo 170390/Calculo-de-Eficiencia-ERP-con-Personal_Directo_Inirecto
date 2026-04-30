@@ -493,3 +493,9 @@ select#modoCalculo {
     box-shadow: 0 6px 0 #001f4d, 0 8px 15px rgba(0,0,0,0.2);
     transition: all 0.2s ease;
 }
+
+/* OPCIONES DEL DESPLEGABLE */
+#modoCalculo option {
+    background: white;
+    color: black;
+}
