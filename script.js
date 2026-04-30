@@ -299,18 +299,24 @@ function cambiarModo() {
 
 document.querySelectorAll("input").forEach(input => {
 
-    // estado inicial
+    // ESTADO INICIAL
     if (input.value.trim() !== "") {
-        input.style.backgroundColor = "#fff";
-        input.style.borderColor = "#ccc";
+        input.style.backgroundColor = "#e9f7ef"; // verde claro
+        input.style.borderColor = "#28a745";
     }
 
-    input.addEventListener("input", function () {
+    // MIENTRAS ESCRIBE
+    input.addEventListener("focus", function () {
+        this.style.backgroundColor = "#fff";
+    });
+
+    // CUANDO TERMINA
+    input.addEventListener("blur", function () {
         if (this.value.trim() !== "") {
-            this.style.backgroundColor = "#fff";
-            this.style.borderColor = "#ccc";
+            this.style.backgroundColor = "#e9f7ef"; // verde claro
+            this.style.borderColor = "#28a745";
         } else {
-            this.style.backgroundColor = "#fdecea";
+            this.style.backgroundColor = "#fdecea"; // rojo
             this.style.borderColor = "#f5c2c7";
         }
     });
