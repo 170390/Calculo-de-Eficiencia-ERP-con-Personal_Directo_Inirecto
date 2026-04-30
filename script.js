@@ -369,13 +369,15 @@ resultados.forEach(id => {
     }
 });
 
-// LIMPIAR METAS (TABLA)
+// LIMPIAR METAS
 ["meta100", "meta95", "meta90"].forEach(id => {
     let el = document.getElementById(id);
-    if (el) {
-        el.textContent = "0"; // 🔥 mejor que innerText para tablas
-    }
+    if (el) el.textContent = "0";
 });
+
+// LIMPIAR SMV BASE
+let smv = document.getElementById("smvBase");
+if (smv) smv.textContent = "0";
     
 // SEMÁFORO
 let sem = document.getElementById("semaforo");
