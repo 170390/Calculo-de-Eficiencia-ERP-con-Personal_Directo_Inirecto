@@ -387,5 +387,3 @@ function limpiarTodo() {
     if (typeof minutosGlobal !== "undefined") {
         minutosGlobal = 0;
     }
-
-}}
