@@ -386,5 +386,4 @@ resultados.forEach(id => {
     // VARIABLE GLOBAL
     if (typeof minutosGlobal !== "undefined") {
         minutosGlobal = 0;
-           }
 }
