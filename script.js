@@ -369,11 +369,13 @@ resultados.forEach(id => {
     }
 });
 
-// LIMPIAR METAS (producción objetivo)
-if (document.getElementById("meta100")) document.getElementById("meta100").innerText = "0";
-if (document.getElementById("meta95")) document.getElementById("meta95").innerText = "0";
-if (document.getElementById("meta90")) document.getElementById("meta90").innerText = "0";
-if (document.getElementById("smvBase")) document.getElementById("smvBase").innerText = "0";
+// LIMPIAR METAS (TABLA)
+["meta100", "meta95", "meta90"].forEach(id => {
+    let el = document.getElementById(id);
+    if (el) {
+        el.textContent = "0"; // 🔥 mejor que innerText para tablas
+    }
+});
 
     // SEMÁFORO
     let sem = document.getElementById("semaforo");
