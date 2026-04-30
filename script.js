@@ -299,7 +299,13 @@ function cambiarModo() {
 
 document.querySelectorAll("input").forEach(input => {
 
-    input.addEventListener("blur", function () {
+    // estado inicial
+    if (input.value.trim() !== "") {
+        input.style.backgroundColor = "#fff";
+        input.style.borderColor = "#ccc";
+    }
+
+    input.addEventListener("input", function () {
         if (this.value.trim() !== "") {
             this.style.backgroundColor = "#fff";
             this.style.borderColor = "#ccc";
