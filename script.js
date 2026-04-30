@@ -296,3 +296,17 @@ function cambiarModo() {
     }
 
 }
+
+document.querySelectorAll("input").forEach(input => {
+
+    input.addEventListener("blur", function () {
+        if (this.value.trim() !== "") {
+            this.style.backgroundColor = "#fff";
+            this.style.borderColor = "#ccc";
+        } else {
+            this.style.backgroundColor = "#fdecea";
+            this.style.borderColor = "#f5c2c7";
+        }
+    });
+
+});
