@@ -407,16 +407,3 @@ input:focus {
     box-shadow: 0 0 5px rgba(220,53,69,0.3);
     outline: none;
 }
-
-// COLOR AUTOMÁTICO INPUTS
-document.querySelectorAll("input").forEach(input => {
-    input.addEventListener("input", function () {
-        if (this.value.trim() !== "") {
-            this.style.backgroundColor = "#e9f7ef";
-            this.style.borderColor = "#28a745";
-        } else {
-            this.style.backgroundColor = "#fdecea";
-            this.style.borderColor = "#f5c2c7";
-        }
-    });
-});
