@@ -326,58 +326,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function limpiarTodo() {
 
-    if (!confirm("¿Deseas limpiar todos los datos?")) return;
+    console.log("Limpiando...");
 
-    // 🔹 LIMPIAR INPUTS
+    // LIMPIAR INPUTS
     document.querySelectorAll("input").forEach(input => {
         input.value = "";
 
-        // 🔴 volver a estado vacío (rojo)
         input.style.setProperty("background-color", "#fdecea", "important");
         input.style.setProperty("border-color", "#f5c2c7", "important");
     });
 
-    // 🔹 RESTAURAR HORAS POR DEFECTO
-    let defaults = ["horasIndirecto", "horasComun", "jornada"];
-
-    defaults.forEach(id => {
+    // RESTAURAR HORAS
+    ["horasIndirecto", "horasComun", "jornada"].forEach(id => {
         let el = document.getElementById(id);
         if (el) {
             el.value = 9.6;
-
-            // 🟢 marcar como dato válido (verde)
             el.style.setProperty("background-color", "#e9f7ef", "important");
             el.style.setProperty("border-color", "#28a745", "important");
         }
     });
 
-    // 🔹 LIMPIAR RESULTADOS
-    let resultados = [
-        "porcentajeLinea", "resultadoIndirecto", "resultadoComun",
-        "sumaHoras", "horasAsignadas", "horasLinea",
-        "totalHoras", "totalMinutos", "resultadoERP",
-        "meta100", "meta95", "meta90", "smvBase"
-    ];
-
-    resultados.forEach(id => {
-        let el = document.getElementById(id);
-        if (el) {
-            el.innerText = (id === "porcentajeLinea" || id === "resultadoERP") ? "0%" : "0";
+    // LIMPIAR RESULTADOS (SIN ROMPER)
+    document.querySelectorAll("span").forEach(span => {
+        if (span.id) {
+            if (span.id.includes("porcentaje") || span.id.includes("ERP")) {
+                span.innerText = "0%";
+            } else {
+                span.innerText = "0";
+            }
         }
     });
 
-    // 🔹 SEMÁFORO
+    // SEMÁFORO
     let sem = document.getElementById("semaforo");
     if (sem) sem.style.background = "gray";
 
-    // 🔹 VARIABLE GLOBAL
+    // VARIABLE GLOBAL
     if (typeof minutosGlobal !== "undefined") {
         minutosGlobal = 0;
     }
-
-    // 🔹 RE-EJECUTAR COLORES DINÁMICOS
-    document.querySelectorAll("input").forEach(input => {
-        input.dispatchEvent(new Event("blur"));
-    });
 
 }
