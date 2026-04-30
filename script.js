@@ -349,41 +349,39 @@ function limpiarTodo() {
         }
     });
 
-    // LIMPIAR RESULTADOS (CONTROLADO)
-    let resultados = [
-        "porcentajeLinea",
-        "resultadoIndirecto",
-        "resultadoComun",
-        "sumaHoras",
-        "horasAsignadas",
-        "horasLinea",
-        "totalHoras",
-        "totalMinutos",
-        "resultadoERP"
-    ];
+// LIMPIAR RESULTADOS (CONTROLADO)
+let resultados = [
+    "porcentajeLinea",
+    "resultadoIndirecto",
+    "resultadoComun",
+    "sumaHoras",
+    "horasAsignadas",
+    "horasLinea",
+    "totalHoras",
+    "totalMinutos",
+    "resultadoERP"
+];
 
-    resultados.forEach(id => {
-        let el = document.getElementById(id);
-        if (el) {
-            el.innerText = (id === "porcentajeLinea" || id === "resultadoERP") ? "0%" : "0";
-        }
-    });
-
-    // LIMPIAR METAS
-    ["meta100", "meta95", "meta90"].forEach(id => {
-        let el = document.getElementById(id);
-        if (el) el.textContent = "0";
-    });
-
-    // LIMPIAR SMV BASE
-    let smv = document.getElementById("smvBase");
-    if (smv) smv.textContent = "0";
-
-    // SEMÁFORO
-    let sem = document.getElementById("semaforo");
-    if (sem) sem.style.background = "gray";
-
-    // VARIABLE GLOBAL
-    if (typeof minutosGlobal !== "undefined") {
-        minutosGlobal = 0;
+resultados.forEach(id => {
+    let el = document.getElementById(id);
+    if (el) {
+        el.innerText = (id === "porcentajeLinea" || id === "resultadoERP") ? "0%" : "0";
     }
+});
+
+// LIMPIAR METAS (TABLA)
+["meta100", "meta95", "meta90"].forEach(id => {
+    let el = document.getElementById(id);
+    if (el) {
+        el.textContent = "0"; // 🔥 mejor que innerText para tablas
+    }
+});
+    
+// SEMÁFORO
+let sem = document.getElementById("semaforo");
+if (sem) sem.style.background = "gray";
+
+// VARIABLE GLOBAL
+if (typeof minutosGlobal !== "undefined") {
+    minutosGlobal = 0;
+}
