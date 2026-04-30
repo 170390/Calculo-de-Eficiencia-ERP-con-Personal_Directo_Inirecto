@@ -274,14 +274,28 @@ function cambiarModo() {
 
     let puntos = ["punto1", "punto2", "punto3", "punto4"];
 
+    // MOSTRAR / OCULTAR
     puntos.forEach(id => {
         let el = document.getElementById(id);
-        el.style.display = (modo === "directo") ? "none" : "block";
+        if (el) el.style.display = (modo === "directo") ? "none" : "block";
     });
 
-}
+    // RENOMBRAR NUMEROS
+    if (modo === "directo") {
 
-document.addEventListener("DOMContentLoaded", cambiarModo);
+        document.querySelectorAll("#punto5 .num")[0].innerText = "1.";
+        document.querySelectorAll("#punto6 .num")[0].innerText = "2.";
+        document.querySelectorAll("#punto7 .num")[0].innerText = "3.";
+
+    } else {
+
+        document.querySelectorAll("#punto5 .num")[0].innerText = "5.";
+        document.querySelectorAll("#punto6 .num")[0].innerText = "6.";
+        document.querySelectorAll("#punto7 .num")[0].innerText = "7.";
+
+    }
+
+}
 
 function limpiarTodo() {
 
