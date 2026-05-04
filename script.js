@@ -85,19 +85,15 @@ function calcularERP() {
         (+document.getElementById("prod2").value || 0) * (+document.getElementById("smv2").value || 0) +
         (+document.getElementById("prod3").value || 0) * (+document.getElementById("smv3").value || 0);
 
-    // VALIDACIÓN
     if (!minutosGlobal || minutosGlobal === 0) {
         alert("Primero debes calcular los minutos (Paso 6).");
         return;
     }
 
-    // 🔥 AJUSTE DE PRECISIÓN (tipo ERP)
-    totalGeneral = Math.round(totalGeneral * 1000) / 1000;
-    let minutos = Math.round(minutosGlobal * 1000) / 1000;
+    // 🔥 CÁLCULO REAL (sin redondeo previo)
+    let erp = (totalGeneral / minutosGlobal) * 100;
 
-    let erp = (totalGeneral / minutos) * 100;
-
-    // MOSTRAR RESULTADO
+    // 🔥 SOLO REDONDEA AQUÍ
     document.getElementById("resultadoERP").innerText = erp.toFixed(2) + "%";
 
     // SEMÁFORO
@@ -107,10 +103,8 @@ function calcularERP() {
     else if (erp >= 90) semaforo.style.background = "gold";
     else semaforo.style.background = "red";
 
-    // CALCULAR METAS (NO SE PIERDE)
     calcularMetas();
 }
-
 function calcularMetas() {
 
     // Asegurar que minutos exista
