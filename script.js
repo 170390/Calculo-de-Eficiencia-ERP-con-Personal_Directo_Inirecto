@@ -94,6 +94,17 @@ function calcularERP() {
 
     document.getElementById("resultadoERP").innerText = erp.toFixed(2) + "%";
 
+    // 🔥 SEMÁFORO
+    let semaforo = document.getElementById("semaforo");
+
+    if (erp >= 100) {
+        semaforo.style.background = "green";
+    } else if (erp >= 90) {
+        semaforo.style.background = "gold";
+    } else {
+        semaforo.style.background = "red";
+    }
+
     calcularMetas();
 }
 function calcularMetas() {
