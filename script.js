@@ -100,7 +100,10 @@ function calcularERP() {
 
     let erp = (totalGeneral / minutosGlobal) * 100;
 
-    document.getElementById("resultadoERP").innerText = erp.toFixed(2) + "%";
+// 🔻 SIEMPRE REDONDEA HACIA ABAJO
+let erpMostrado = Math.floor(erp * 100) / 100;
+
+document.getElementById("resultadoERP").innerText = erpMostrado.toFixed(2) + "%";
 
     // 🔥 SEMÁFORO
     let semaforo = document.getElementById("semaforo");
