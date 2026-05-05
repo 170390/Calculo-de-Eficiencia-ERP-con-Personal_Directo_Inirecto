@@ -686,3 +686,61 @@ body.dark-mode input[style*="#f5c2c7"] {
     color: #fecaca !important;
     border-color: #ef4444 !important;
 }
+
+/* =========================
+   ✨ INPUTS PRO DINÁMICOS
+========================= */
+
+input {
+    transition: all 0.25s ease;
+}
+
+/* FOCUS (cuando escribes) */
+input:focus {
+    background-color: #ffffff !important;
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 8px rgba(59,130,246,0.6);
+}
+
+/* ESTADO VALIDO */
+.input-ok {
+    background-color: #e9f7ef !important;
+    border-color: #22c55e !important;
+}
+
+/* ESTADO ERROR */
+.input-error {
+    background-color: #fdecea !important;
+    border-color: #ef4444 !important;
+}
+
+/* =========================
+   🌙 MODO OSCURO
+========================= */
+
+body.dark-mode input {
+    background-color: #020617 !important;
+    color: #ffffff !important;
+    border-color: #475569 !important;
+}
+
+/* FOCUS OSCURO */
+body.dark-mode input:focus {
+    background-color: #020617 !important;
+    border-color: #60a5fa !important;
+    box-shadow: 0 0 10px rgba(96,165,250,0.8);
+}
+
+/* OK OSCURO */
+body.dark-mode .input-ok {
+    background-color: #064e3b !important;
+    border-color: #22c55e !important;
+    box-shadow: 0 0 8px rgba(34,197,94,0.6);
+}
+
+/* ERROR OSCURO */
+body.dark-mode .input-error {
+    background-color: #7f1d1d !important;
+    border-color: #ef4444 !important;
+    box-shadow: 0 0 8px rgba(239,68,68,0.6);
+}
