@@ -10,8 +10,11 @@ function calcularPorcentaje() {
 
     let porcentaje = (linea / total) * 100;
 
+    // VISUAL (2 decimales)
     document.getElementById("porcentajeLinea").innerText = porcentaje.toFixed(2) + "%";
-    document.getElementById("porcentajeAsignado").value = porcentaje.toFixed(2);
+
+    // REAL (sin redondear)
+    document.getElementById("porcentajeAsignado").value = porcentaje;
 }
 
 // 2
@@ -20,10 +23,10 @@ function calcularIndirecto() {
     let horas = +document.getElementById("horasIndirecto").value || 0;
     let tarde = +document.getElementById("tardeIndirecto").value || 0;
 
-    let resultado = (to * horas) - tarde;
+   let resultado = (to * horas) - tarde;
 
-    document.getElementById("resultadoIndirecto").innerText = resultado.toFixed(2);
-    document.getElementById("horasIndAsignadas").value = resultado.toFixed(2);
+document.getElementById("horasIndAsignadas").value = resultado; // sin redondeo
+document.getElementById("resultadoIndirecto").innerText = resultado.toFixed(2);
 }
 
 // 3
@@ -34,21 +37,24 @@ function calcularComun() {
 
     let resultado = (to * horas) - tarde;
 
-    document.getElementById("resultadoComun").innerText = resultado.toFixed(2);
-    document.getElementById("horasComAsignadas").value = resultado.toFixed(2);
+document.getElementById("horasComAsignadas").value = resultado;
+document.getElementById("resultadoComun").innerText = resultado.toFixed(2);
 }
 
 // 4
 function calcularAsignadas() {
-    let ind = +document.getElementById("horasIndAsignadas").value || 0;
-    let com = +document.getElementById("horasComAsignadas").value || 0;
-    let porcentaje = +document.getElementById("porcentajeAsignado").value || 0;
+
+    let ind = Number(document.getElementById("horasIndAsignadas").value) || 0;
+    let com = Number(document.getElementById("horasComAsignadas").value) || 0;
+    let porcentaje = Number(document.getElementById("porcentajeAsignado").value) || 0;
 
     let suma = ind + com;
     let asignadas = suma * (porcentaje / 100);
 
+    // 🔥 GUARDAR REAL (SIN REDONDEAR)
     horasAsignadasGlobal = asignadas;
 
+    // 👁 MOSTRAR (SOLO VISUAL)
     document.getElementById("sumaHoras").innerText = suma.toFixed(2);
     document.getElementById("horasAsignadas").innerText = asignadas.toFixed(2);
 }
@@ -61,20 +67,20 @@ function calcularHorasLinea() {
 
     let horas = (to * jornada) - tarde;
 
-    horasLineaGlobal = horas;
+horasLineaGlobal = horas;
 
-    document.getElementById("horasLinea").innerText = horas.toFixed(2);
+document.getElementById("horasLinea").innerText = horas.toFixed(2);
 }
 
 // 6
 function calcularMinutos() {
-    let totalHoras = horasLineaGlobal + horasAsignadasGlobal;
-    let minutos = totalHoras * 60;
+   let totalHoras = horasLineaGlobal + horasAsignadasGlobal;
+let minutos = totalHoras * 60;
 
-    minutosGlobal = minutos;
+minutosGlobal = minutos;
 
-    document.getElementById("totalHoras").innerText = totalHoras.toFixed(2);
-    document.getElementById("totalMinutos").innerText = minutos.toFixed(2);
+document.getElementById("totalHoras").innerText = totalHoras.toFixed(2);
+document.getElementById("totalMinutos").innerText = minutos.toFixed(2);
 }
 
 // 7 (ACTUALIZADO MULTIESTILO)
