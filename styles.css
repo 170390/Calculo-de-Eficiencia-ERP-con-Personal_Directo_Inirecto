@@ -499,3 +499,69 @@ select#modoCalculo {
     background: white;
     color: black;
 }
+
+/* SWITCH MODO OSCURO */
+.modo-switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.switch {
+    position: relative;
+    width: 50px;
+    height: 26px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    inset: 0;
+    background: #ccc;
+    border-radius: 34px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background: white;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+input:checked + .slider {
+    background: #007aff;
+}
+
+input:checked + .slider::before {
+    transform: translateX(24px);
+}
+
+/* MODO OSCURO */
+body.dark-mode {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.dark-mode .card {
+    background: #1e1e1e;
+}
+
+body.dark-mode input {
+    background-color: #2a2a2a !important;
+    color: white;
+    border-color: #555 !important;
+}
