@@ -2,6 +2,7 @@ let porcentajeGlobal = 0;
 let horasAsignadasGlobal = 0;
 let horasLineaGlobal = 0;
 let minutosGlobal = 0;
+let porcentajeRealGlobal = 0;
 
 // 1
 function calcularPorcentaje() {
@@ -10,11 +11,12 @@ function calcularPorcentaje() {
 
     let porcentaje = (linea / total) * 100;
 
-    // VISUAL (2 decimales)
-    document.getElementById("porcentajeLinea").innerText = porcentaje.toFixed(2) + "%";
+    // 🔥 GUARDAR REAL
+    porcentajeRealGlobal = porcentaje;
 
-    // REAL (sin redondear)
-    document.getElementById("porcentajeAsignado").value = porcentaje;
+    // 👁 MOSTRAR BONITO
+    document.getElementById("porcentajeLinea").innerText = porcentaje.toFixed(2) + "%";
+    document.getElementById("porcentajeAsignado").value = porcentaje.toFixed(2);
 }
 
 // 2
@@ -46,7 +48,7 @@ function calcularAsignadas() {
 
     let ind = Number(document.getElementById("horasIndAsignadas").value) || 0;
     let com = Number(document.getElementById("horasComAsignadas").value) || 0;
-    let porcentaje = Number(document.getElementById("porcentajeAsignado").value) || 0;
+    let porcentaje = porcentajeRealGlobal || 0;
 
     let suma = ind + com;
     let asignadas = suma * (porcentaje / 100);
