@@ -569,3 +569,99 @@ body.dark-mode input {
 .slider {
     box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
 }
+
+/* =========================
+   🌙 MODO OSCURO FULL
+========================= */
+
+body.dark-mode {
+    background: #0f172a;
+    color: #e2e8f0;
+}
+
+/* TARJETAS */
+body.dark-mode .card {
+    background: #1e293b;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+/* TITULOS */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+    color: #f1f5f9;
+}
+
+/* TABLAS */
+body.dark-mode table {
+    background: #1e293b;
+    color: white;
+}
+
+body.dark-mode th {
+    background: #334155;
+    color: #f8fafc;
+}
+
+body.dark-mode td {
+    border-color: #334155;
+}
+
+/* INPUTS */
+body.dark-mode input {
+    background-color: #020617 !important;
+    color: #f8fafc !important;
+    border-color: #475569 !important;
+}
+
+/* INPUT CUANDO TIENE VALOR (verde tuyo) */
+body.dark-mode input[style*="#28a745"] {
+    background-color: #064e3b !important;
+    border-color: #22c55e !important;
+}
+
+/* INPUT ERROR (rojo tuyo) */
+body.dark-mode input[style*="#f5c2c7"] {
+    background-color: #7f1d1d !important;
+    border-color: #ef4444 !important;
+}
+
+/* BOTONES */
+body.dark-mode button {
+    background: linear-gradient(145deg, #1d4ed8, #1e40af);
+    color: white;
+}
+
+/* BOTON LIMPIAR (amarillo advertencia) */
+body.dark-mode .btn-limpiar {
+    background: linear-gradient(145deg, #facc15, #ca8a04);
+    color: black;
+}
+
+/* HOVER BOTONES */
+body.dark-mode button:hover {
+    transform: scale(1.03);
+    opacity: 0.95;
+}
+
+/* SELECT MODO */
+body.dark-mode select#modoCalculo {
+    background: linear-gradient(145deg, #1e3a8a, #1e40af) !important;
+    color: white !important;
+}
+
+/* RESULTADO BOX */
+body.dark-mode .resultado-box {
+    background: #020617;
+    border: 1px solid #334155;
+}
+
+/* SEMÁFORO MÁS BRILLANTE */
+body.dark-mode .semaforo {
+    box-shadow: 0 0 15px rgba(255,255,255,0.2);
+}
+
+/* LINEAS / HR */
+body.dark-mode hr {
+    border-color: #334155;
+}
