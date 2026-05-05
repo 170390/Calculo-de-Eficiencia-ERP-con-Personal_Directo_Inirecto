@@ -329,15 +329,13 @@ document.addEventListener("DOMContentLoaded", function () {
             this.style.setProperty("background-color", "#fff", "important");
         });
 
-        input.addEventListener("blur", function () {
-
-    // limpiar clases
-    this.classList.remove("input-ok", "input-error");
-
+     input.addEventListener("blur", function () {
     if (this.value.trim() !== "") {
-        this.classList.add("input-ok");
+        this.style.setProperty("background-color", "#e9f7ef", "important");
+        this.style.setProperty("border-color", "#28a745", "important");
     } else {
-        this.classList.add("input-error");
+        this.style.setProperty("background-color", "#fdecea", "important");
+        this.style.setProperty("border-color", "#f5c2c7", "important");
     }
 });
 
