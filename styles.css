@@ -665,3 +665,24 @@ body.dark-mode .semaforo {
 body.dark-mode hr {
     border-color: #334155;
 }
+
+/* 🔥 FIX INPUTS EN MODO OSCURO */
+body.dark-mode input {
+    background-color: #020617 !important; /* fondo oscuro real */
+    color: #ffffff !important; /* texto blanco */
+    border-color: #475569 !important;
+}
+
+/* CUANDO INPUT ES "VALIDO" (VERDE) */
+body.dark-mode input[style*="#28a745"] {
+    background-color: #064e3b !important; /* verde oscuro */
+    color: #d1fae5 !important; /* texto claro */
+    border-color: #22c55e !important;
+}
+
+/* CUANDO INPUT ES "ERROR" (ROJO) */
+body.dark-mode input[style*="#f5c2c7"] {
+    background-color: #7f1d1d !important; /* rojo oscuro */
+    color: #fecaca !important;
+    border-color: #ef4444 !important;
+}
