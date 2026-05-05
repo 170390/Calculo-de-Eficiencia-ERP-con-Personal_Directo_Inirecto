@@ -165,12 +165,16 @@ function calcularMetas() {
     }
 
     // Cálculo de metas
+    let meta105 = (minutosGlobal * 1.05) / smvBase;
+    let meta110 = (minutosGlobal * 1.10) / smvBase;
     let meta100 = minutosGlobal / smvBase;
     let meta95 = (minutosGlobal * 0.95) / smvBase;
     let meta90 = (minutosGlobal * 0.90) / smvBase;
 
     // Mostrar resultados
     document.getElementById("smvBase").innerText = smvBase.toFixed(2);
+    document.getElementById("meta105").innerText = Math.round(meta105);
+    document.getElementById("meta110").innerText = Math.round(meta110);
     document.getElementById("meta100").innerText = Math.round(meta100);
     document.getElementById("meta95").innerText = Math.round(meta95);
     document.getElementById("meta90").innerText = Math.round(meta90);
@@ -229,6 +233,8 @@ function calcularTodo() {
     document.getElementById("meta100").innerText = Math.round(minutosGlobal / smvBase);
     document.getElementById("meta95").innerText = Math.round((minutosGlobal * 0.95) / smvBase);
     document.getElementById("meta90").innerText = Math.round((minutosGlobal * 0.90) / smvBase);
+    document.getElementById("meta105").innerText = Math.round((minutosGlobal * 1.05) / smvBase);
+    document.getElementById("meta110").innerText = Math.round((minutosGlobal * 1.10) / smvBase);
     document.getElementById("smvBase").innerText = smvBase.toFixed(2);
 }
 
@@ -386,7 +392,7 @@ resultados.forEach(id => {
 });
 
 // LIMPIAR METAS
-["meta100", "meta95", "meta90"].forEach(id => {
+["meta100", "meta95", "meta90", "meta105", "meta110"].forEach(id => {
     let el = document.getElementById(id);
     if (el) el.textContent = "0";
 });
