@@ -565,3 +565,7 @@ body.dark-mode input {
     color: white;
     border-color: #555 !important;
 }
+
+.slider {
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
