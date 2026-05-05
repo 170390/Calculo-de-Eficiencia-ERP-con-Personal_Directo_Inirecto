@@ -330,14 +330,16 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         input.addEventListener("blur", function () {
-            if (this.value.trim() !== "") {
-                this.style.setProperty("background-color", "#e9f7ef", "important");
-                this.style.setProperty("border-color", "#28a745", "important");
-            } else {
-                this.style.setProperty("background-color", "#fdecea", "important");
-                this.style.setProperty("border-color", "#f5c2c7", "important");
-            }
-        });
+
+    // limpiar clases
+    this.classList.remove("input-ok", "input-error");
+
+    if (this.value.trim() !== "") {
+        this.classList.add("input-ok");
+    } else {
+        this.classList.add("input-error");
+    }
+});
 
     });
 
