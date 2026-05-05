@@ -105,13 +105,13 @@ document.getElementById("resultadoERP").innerText = erp.toFixed(2) + "%";
     // 🔥 SEMÁFORO
     let semaforo = document.getElementById("semaforo");
 
-    if (erp >= 100) {
-        semaforo.style.background = "green";
-    } else if (erp >= 90) {
-        semaforo.style.background = "gold";
-    } else {
-        semaforo.style.background = "red";
-    }
+   if (erp >= 100) {
+    semaforo.style.background = "#22c55e"; // verde moderno
+} else if (erp >= 90) {
+    semaforo.style.background = "#facc15"; // amarillo pro
+} else {
+    semaforo.style.background = "#ef4444"; // rojo moderno
+}
 
     calcularMetas();
 }
