@@ -404,3 +404,15 @@ if (typeof minutosGlobal !== "undefined") {
     minutosGlobal = 0;
 }
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const esOscuro = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (esOscuro) {
+        document.body.classList.add("dark-mode");
+    } else {
+        document.body.classList.remove("dark-mode");
+    }
+
+});
