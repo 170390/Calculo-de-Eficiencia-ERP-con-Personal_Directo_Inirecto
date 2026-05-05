@@ -404,21 +404,3 @@ if (typeof minutosGlobal !== "undefined") {
     minutosGlobal = 0;
 }
 }
-
-const toggle = document.getElementById("modoToggle");
-
-// CAMBIO MANUAL
-toggle.addEventListener("change", () => {
-    document.body.classList.toggle("dark-mode");
-    localStorage.setItem("modoOscuro", toggle.checked);
-});
-
-// CARGAR ESTADO
-document.addEventListener("DOMContentLoaded", () => {
-    let modoGuardado = localStorage.getItem("modoOscuro");
-
-    if (modoGuardado === "true") {
-        document.body.classList.add("dark-mode");
-        toggle.checked = true;
-    }
-});
