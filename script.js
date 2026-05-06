@@ -76,7 +76,15 @@ document.getElementById("horasLinea").innerText = horas.toFixed(2);
 
 // 6
 function calcularMinutos() {
-   let totalHoras = horasLineaGlobal + horasAsignadasGlobal;
+let modo = document.getElementById("modoCalculo").value;
+
+let totalHoras = 0;
+
+if (modo === "directo") {
+    totalHoras = horasLineaGlobal;
+} else {
+    totalHoras = horasLineaGlobal + horasAsignadasGlobal;
+}
 let minutos = totalHoras * 60;
 
 minutosGlobal = minutos;
@@ -319,7 +327,18 @@ function cambiarModo() {
         document.querySelectorAll("#punto7 .num")[0].innerText = "7.";
 
     }
+// 🔥 RESETEAR VARIABLES
+horasAsignadasGlobal = 0;
+horasLineaGlobal = 0;
+minutosGlobal = 0;
 
+// 🔥 LIMPIAR RESULTADOS
+document.getElementById("totalHoras").innerText = "0";
+document.getElementById("totalMinutos").innerText = "0";
+document.getElementById("resultadoERP").innerText = "0%";
+
+let sem = document.getElementById("semaforo");
+if (sem) sem.style.background = "gray";
 }
 
 document.addEventListener("DOMContentLoaded", function () {
