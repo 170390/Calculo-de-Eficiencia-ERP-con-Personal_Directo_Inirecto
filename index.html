@@ -9,18 +9,18 @@
 <body>
 
 <div class="container">
-    <h1>Calculo de Eficiencia y Proyeccion de Meta ERP</h1>
+    <h1>Cálculo de Eficiencia y Meta ERP</h1>
     <div class="card">
     <label><strong>Modo de cálculo:</strong></label>
     <select id="modoCalculo" onchange="cambiarModo()">
-        <option value="completo">Completo (Indirecto + Común)</option>
-        <option value="directo">Solo Línea</option>
+        <option value="completo">Cálculo Integral (TO Indirectos y TO Comun)</option>
+        <option value="directo">Solo Producción (TO Directo Linea)</option>
     </select>
 </div>
 
     <!-- 1. PORCENTAJE -->
     <section class="card" id="punto1">
-        <h2>1. % Personal por Línea</h2>
+        <h2>1. Distribución de Personal por Línea ( % )</h2>
 
        <div class="tabla-wrapper">
     <div class="tabla-grid simple">
@@ -28,10 +28,10 @@
         <div class="header">Campo</div>
         <div class="header">Valor</div>
 
-        <div>Total Personal</div>
+        <div>TO Total Directo Prod.</div>
         <div><input type="number" id="totalPersonal"></div>
 
-        <div>TO Línea</div>
+        <div>TO Directo Línea</div>
         <div><input type="number" id="toLinea"></div>
 
     </div>
