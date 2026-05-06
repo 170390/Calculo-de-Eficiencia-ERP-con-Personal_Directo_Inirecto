@@ -52,7 +52,7 @@
 
     <!-- 2. INDIRECTO -->
     <section class="card" id="punto2">
-        <h2>2. Personal Indirecto</h2>
+        <h2>2. Personal Indirecto ( Horas )</h2>
 
        <div class="tabla-wrapper">
     <div class="tabla-grid simple">
@@ -63,7 +63,7 @@
         <div>TO Indirecto</div>
         <div><input type="number" id="toIndirecto"></div>
 
-        <div>Horas</div>
+        <div>Jornada Laboral</div>
         <div><input type="number" id="horasIndirecto" value="9.6" step="0.1" placeholder="horasIndirecto"></div>
 
         <div>Horas Tarde</div>
@@ -87,7 +87,7 @@
 
     <!-- 3. DIRECTO COMUN -->
     <section class="card" id="punto3">
-        <h2>3. Personal Directo Común</h2>
+        <h2>3. Personal Directo Común ( Horas )</h2>
 
         <div class="tabla-wrapper">
     <div class="tabla-grid simple">
@@ -98,7 +98,7 @@
         <div>TO Común</div>
         <div><input type="number" id="toComun"></div>
 
-        <div>Horas</div>
+        <div>Jornada Laboral</div>
         <div><input type="number" id="horasComun" value="9.6" step="0.1" placeholder="horasComun"></div>
 
         <div>Horas Tarde</div>
@@ -122,7 +122,7 @@
 
     <!-- 4. HORAS ASIGNADAS -->
     <section class="card" id="punto4">
-        <h2>4. Horas Asignadas</h2>
+        <h2>4. Horas Asignadas a Lineas ( Horas / Linea )</h2>
 
        <div class="tabla-wrapper">
     <div class="tabla-grid simple">
@@ -148,7 +148,7 @@
         <div class="header">Resultado</div>
         <div class="header">Valor</div>
 
-        <div>Suma Horas</div>
+        <div>Horas (Ind+Comun)</div>
         <div><span class="resultado" id="sumaHoras">0</span></div>
 
         <div>Horas Asignadas</div>
@@ -160,7 +160,7 @@
 
     <!-- 5. HORAS POR LINEA -->
     <section class="card" id="punto5">
-       <h2><span class="num">5.</span> Horas por Línea</h2>
+       <h2><span class="num">5.</span> Horas por Línea (TO Directo)</h2>
 
        <div class="tabla-wrapper">
     <div class="tabla-grid simple">
@@ -168,10 +168,10 @@
         <div class="header">Campo</div>
         <div class="header">Valor</div>
 
-        <div>TO Línea</div>
+        <div>TO Directo Línea</div>
         <div><input type="number" id="toLineaHoras"></div>
 
-        <div>Jornada</div>
+        <div>Jornada Laboral</div>
         <div><input type="number" id="jornada" value="9.6" step="0.1" placeholder="Horas jornada"></div>
 
         <div>Horas Tarde</div>
@@ -195,7 +195,7 @@
 
     <!-- 6. TOTAL + MINUTOS -->
     <section class="card" id="punto6">
-        <h2><span class="num">6.</span> Total y Minutos</h2>
+        <h2><span class="num">6.</span> Total Horas y Minutos (Horas TO Directo + Horas Asignados)</h2>
 
   <div class="tabla-wrapper">
     <div class="tabla-grid simple">
